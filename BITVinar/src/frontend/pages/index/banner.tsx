@@ -6,29 +6,18 @@ import { Box, Button } from "zmp-ui";
 export const Banner: FC = () => {
   const banners = [
     {
-      image: "https://phuminhtam.com.vn/wp-content/uploads/2024/06/Thiet-ke-chua-co-ten-1.png",
-      title: "NÔNG SẢN PHÚ MINH TÂM",
+      image: "https://vinar.vn/wp-content/uploads/slider/cache/d839c1ac8028f02801a1fbb69aa3e645/web-vn2.jpg",
+     /*  title: "NÔNG SẢN PHÚ MINH TÂM",
       subtitle: "Chuyên cung cấp các loại mặt hàng nông sản ĐẬU-GẠO-NẾP-MÈ",
-      textColor: "#FFFFFF",//#FFFFFF
+      textColor: "#FFFFFF",//#FFFFFF */
     },
     {
-      image: "https://phuminhtam.com.vn/wp-content/uploads/2024/05/phuminhtam.com_.vn-3-8073.png",
-      title: "NÔNG SẢN PHÚ MINH TÂM",
+      image: "https://vinar.vn/wp-content/uploads/slider/cache/508f06666e6337ff4f5de18ac7522531/sen-voi-american-standard.jpg",
+     /*  title: "NÔNG SẢN PHÚ MINH TÂM",
       subtitle: "Chuyên cung cấp các loại mặt hàng nông sản ĐẬU-GẠO-NẾP-MÈ",
-      textColor: "#000000", 
+      textColor: "#FFFFFF",//#FFFFFF */
     },
-    {
-      image: "https://phuminhtam.com.vn/wp-content/uploads/2024/05/hello@reallygreatsite.com-1-0031.png",
-      title: "NÔNG SẢN PHÚ MINH TÂM",
-      subtitle: "Chuyên cung cấp các loại mặt hàng nông sản ĐẬU-GẠO-NẾP-MÈ",
-      textColor: "#FFFFFF",
-    },
-    {
-      image: "https://phuminhtam.com.vn/wp-content/uploads/2024/05/phuminhtam.com_.vn-6800-e1716382038186.png",
-      title: "NÔNG SẢN PHÚ MINH TÂM",
-      subtitle: "Chuyên cung cấp các loại mặt hàng nông sản ĐẬU-GẠO-NẾP-MÈ",
-      textColor: "#000000",
-    },
+   
   ];
 
   return (
@@ -76,28 +65,28 @@ export const Banner: FC = () => {
                 <span
                   style={{ fontSize: "20px",
                            marginBottom: "1px", 
-                           color: banner.textColor ,
+                        /*    color: banner.textColor , */
                            textAlign: "center",
                            width: "100%",
                            fontFamily: "'Times New Roman', Times, serif",
                           }}
                 >
-                  {banner.title}
+               {/*    {banner.title} */}
                 </span>
                 {/* Dòng chữ 2 */}
                 <span
                   style={{
                     fontSize: "15px",
                     marginBottom: "30px",
-                    color: banner.textColor,
+                /*     color: banner.textColor, */
                     textAlign: "center",
                     width: "100%",
                   }}
                 >
-                  {banner.subtitle}
+               {/*    {banner.subtitle} */}
                 </span>
                 {/* Nút số điện thoại */}
-                <Button
+              {/*   <Button
                   style={{
                     backgroundColor: "green",
                     color: "white",
@@ -115,7 +104,7 @@ export const Banner: FC = () => {
                   }}
                 >
                   Gọi ngay: 0937 355 143
-                </Button>
+                </Button> */}
               </Box>
             </Box>
           </SwiperSlide>

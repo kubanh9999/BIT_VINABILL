@@ -19,7 +19,7 @@ const HomePage: React.FunctionComponent = () => {
           <Categories />
         </Suspense>
         <Divider />
-        <Recommend />
+       {/*  <Recommend /> */}
         <Divider />
         <ProductList />
         <Divider />

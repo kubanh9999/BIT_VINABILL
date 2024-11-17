@@ -131,7 +131,7 @@ const Personal: FC<PersonalProps> = ({ setLoading }) => {
   };
 
   return (
-    <Box className="m-4">
+    <Box className="m-4 ">
       <ListRenderer
         title="Cá nhân"
         items={listRender(handleUserInfo, navigate, getAuth.isAdmin)}
@@ -216,7 +216,7 @@ const ProfilePage: FC = () => {
           <Spinner />
         </div>
       )}
-      <Header showBackIcon={false} title="&nbsp;" />
+      <Header showBackIcon={false} title="&nbsp;" className="bg-[#009e91]"/>
       {!loading && (
         <>
           <Subscription></Subscription>

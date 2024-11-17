@@ -56,7 +56,7 @@ const NewDetailPage: FC = () => {
 
   return (
     <Page>
-      <Header title={"Chi tiết tin tức"} className="mr-10" />
+      <Header title={"Chi tiết tin tức"} className="mr-10 text-white bg-[#009e91]"  />
       <Divider />
       <Box className="p-4">
         {blog ? (

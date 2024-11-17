@@ -7,22 +7,22 @@ const ContactPage: FC = () => {
 
   useEffect(() => {
     if (iframeRef.current) {
-      iframeRef.current.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1232.5136104807154!2d106.62907371719339!3d10.840971709325483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bd5bfb32677%3A0x4f017048fcb754c5!2sC%C3%94NG%20TY%20TNHH%20TM%20DV%20PH%C3%9A%20MINH%20T%C3%82M!5e1!3m2!1svi!2s!4v1727689897724!5m2!1svi!2s";
+      iframeRef.current.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.3262010339877!2d108.17856917465596!3d16.048553739992048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142190db26afee9%3A0x43b26b39dc72c163!2zMzI0IFTDtG4gxJDhuqNuLCBIb8OgIEFuLCBD4bqpbSBM4buHLCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1731841351725!5m2!1svi!2s" ;
     }
   }, []);
 
   return (
     <>
-      <Header title="Liên hệ" showBackIcon={true} />
+      <Header title="Liên hệ" showBackIcon={true} className="bg-[#009e91] text-white" />
       <Page>
         <Box className="m-4 space-y-4">
           <Box className="space-y-2">
           <Text.Title><strong>Thông tin liên hệ</strong></Text.Title>
-          <Text><strong>Địa chỉ:</strong> 481/83 Nguyễn Văn Quá, Tổ 11, KP8, Phường Đông Hưng Thuận, Quận 12, TP.HCM</Text>
-          <Text><strong>Số điện thoại hotline/zalo:</strong> <a href="tel:0937355143" style={{ textDecoration: 'underline' }}>0937.355.143</a></Text>
-          <Text><strong>Số điện thoại văn phòng:</strong> <a href="tel:02837155143" style={{ textDecoration: 'underline' }}></a>028.3715.5143</Text>
-          <Text><strong>Email 1:</strong> <a href="mailto:phuminhtam@phuminhtam.com.vn" style={{ textDecoration: 'underline' }}>phuminhtam@phuminhtam.com.vn</a></Text>
-          <Text><strong>Email 2:</strong>  <a href="mailto:phuminhtampmt@gmail.com" style={{ textDecoration: 'underline' }}> phuminhtampmt@gmail.com</a></Text>
+          <Text><strong>Địa chỉ:</strong> 324 Tôn Đản, Quận Cẩm Lệ, TP Đà Nẵng</Text>
+          <Text><strong>Số điện thoại hotline/zalo:</strong> <a href="tel:02363659116" style={{ textDecoration: 'underline' }}>023.6365.9116 </a></Text>
+          <Text><strong>Số điện thoại văn phòng:</strong> <a href="tel:02363659118" style={{ textDecoration: 'underline' }}></a>- 023.6365.9118</Text>
+          <Text><strong>Email 1:</strong> <a href="mailto:vinar.infor@gmail.com" style={{ textDecoration: 'underline' }}>vinar.infor@gmail.com</a></Text>
+         
         </Box>
         <Box className="space-y-2">
           <Text.Title><strong>Bản đồ</strong></Text.Title>

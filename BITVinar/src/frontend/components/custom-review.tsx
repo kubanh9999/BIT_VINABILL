@@ -109,7 +109,7 @@ const CustomReview: FC<{ visible: boolean; onClose: () => void }> = ({
             onChange={(e) => setComment(e.target.value)}
             style={{ marginBottom: 16 }}
           />
-          <Box flex justifyContent="center">
+          <Box flex justifyContent="center" >
             <Button onClick={handleSubmit}>Gửi đánh giá</Button>
           </Box>
         </Box>

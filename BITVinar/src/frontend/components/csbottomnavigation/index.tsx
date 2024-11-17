@@ -28,7 +28,7 @@ const tabs: Record<string, any> = {
       label: "Trang chủ",
       icon: <HiHome size={28} className="inline" />,
     },
-    "/notification": {
+    "/news": {
       label: "Tin tức",
       icon: <HiBell size={28} className="inline" />,
     },

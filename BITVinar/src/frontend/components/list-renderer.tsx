@@ -30,7 +30,7 @@ export function ListRenderer<T>({
   }, [items]);
   return (
     <Box className="bg-background rounded-xl">
-      {title && <Text.Title className="p-4 pb-0">{title}</Text.Title>}
+      {title && <Text.Title className="p-4 pb-0 "  >{title}</Text.Title>}
       <Box>
         {(isCollapsed ? collapsedItems : items).map((item, i, list) => (
           <div
@@ -61,7 +61,7 @@ export function ListRenderer<T>({
           </Button>
         </Box>
       ) : (
-        <Box className="w-full h-4"></Box>
+        <Box className="w-full h-4 "></Box>
       )}
     </Box>
   );

@@ -54,5 +54,5 @@ export function displayInputDate(date: Date, hint?: boolean) {
 export function getMonthName(monthNumber) {
   const date = new Date();
   date.setMonth(monthNumber - 1); // JavaScript months are 0-based
-  return date.toLocaleString("en-US", { month: "long" });
+  return date.toLocaleString("vi-VI", { month: "long" });
 }

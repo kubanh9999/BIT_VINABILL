@@ -31,7 +31,7 @@ export const DashBoardPage = () => {
   let { state, contents } = yearDiscountAmountTotal;
   if (state === "hasValue")
     return (
-      <PageWrapper title={"Dashboard"}>
+      <PageWrapper title={"Bảng điều khiển"}>
         <Box m={4} className="bg-white rounded-lg p-4">
           <span className="font-bold text-xl">Doanh thu</span>
           <Box m={4} className="bg-white rounded-lg overflow-auto">
@@ -39,11 +39,11 @@ export const DashBoardPage = () => {
           </Box>
           <Box className="border pb-2 rounded-lg">
             <div className="text-center py-2">
-              <span className="text-xl font-bold">Total</span>
+              <span className="text-xl font-bold">Tổng</span>
               <br />
               <span>
                 (
-                {`${new Date().getFullYear()}-01-01 to ${displayInputDate(
+                {`${new Date().getFullYear()}-01-01 đến ${displayInputDate(
                   new Date()
                 )}`}
                 )
@@ -51,23 +51,23 @@ export const DashBoardPage = () => {
             </div>
             <div className="flex gap-2 justify-center flex-wrap">
               <div className="flex flex-col items-center border rounded-lg w-36">
-                <div>Revenue</div>
+                <div>Doanh thu</div>
                 <span className="font-bold">
                   {yearRevenueTotal.contents.toLocaleString() + " đ"}
                 </span>
               </div>
               <div className="flex flex-col items-center border rounded-lg w-36">
-                <div>Order</div>
+                <div>Đặt hàng</div>
                 <span className="font-bold">{yearOrderTotal.contents}</span>
               </div>
               <div className="flex flex-col items-center border rounded-lg w-36">
-                <div>Discount Applied</div>
+                <div>Áp dụng giảm giá</div>
                 <span className="font-bold">
                   {yearDiscountsAppliedTotal.contents}
                 </span>
               </div>
               <div className="flex flex-col items-center border rounded-lg w-36">
-                <div>Discount Amount</div>
+                <div>Số tiền giảm giá</div>
                 <span className="font-bold">
                   {yearDiscountAmountTotal.contents.toLocaleString() + " đ"}
                 </span>

@@ -22,19 +22,19 @@ export const formFields: FormField[] = [
     field: "description",
     type: "txtar",
   },
+  // {
+  //   title: "Tùy chọn",
+  //   field: "variantId",
+  //   type: "mulcbx",
+  // },
   {
-    title: "Tùy chọn",
-    field: "variantId",
-    type: "mulcbx",
-  },
-  {
-    title: "Chủng loại",
+    title: "Thể loại",
     field: "categoryId",
     type: "mulcbx",
   },
-  {
-    title: "Gợi ý sản phẩm lên trang chủ",
-    field: "isFeatured",
-    type: "chk",
-  },
+  // {
+  //   title: "Gợi ý sản phẩm lên trang chủ",
+  //   field: "isFeatured",
+  //   type: "chk",
+  // },
 ];

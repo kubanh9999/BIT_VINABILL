@@ -59,6 +59,15 @@ export const CartPreview: FC = () => {
         </Text.Title>
       </Box>
       <Button
+        style={{
+          backgroundColor: !quantity || !selectAddress || !userCurrent?.phone_number
+            ? '#cccccc' // Màu khi nút bị khóa
+            : '#009e91', // Màu khi nút hoạt động
+          color: 'white', // Màu chữ
+          cursor: !quantity || !selectAddress || !userCurrent?.phone_number
+            ? 'not-allowed' // Con trỏ khi nút bị khóa
+            : 'pointer', // Con trỏ khi nút hoạt động
+        }}
         type="highlight"
         disabled={!quantity || !selectAddress || !userCurrent?.phone_number}
         fullWidth

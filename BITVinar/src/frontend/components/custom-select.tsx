@@ -131,14 +131,23 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ onSaveAddress }) => {
           onChange={(e) => setStreetAddress(e.target.value)}
         />
         <Box textAlign="center">
-          <Button
-            fullWidth
-            style={{ marginTop: "16px" }}
-            onClick={handleConfirm}
-            disabled={!selectedWard || !streetAddress}
-          >
-            XÁC NHẬN
-          </Button>
+        <Button
+          fullWidth
+          style={{
+            marginTop: "16px",
+            backgroundColor: !selectedWard || !streetAddress
+              ? '#cccccc' // Màu khi nút bị khóa
+              : '#009e91', // Màu khi nút hoạt động
+            color: 'white', // Màu chữ
+            cursor: !selectedWard || !streetAddress
+              ? 'not-allowed' // Con trỏ khi nút bị khóa
+              : 'pointer', // Con trỏ khi nút hoạt động
+          }}
+          onClick={handleConfirm}
+          disabled={!selectedWard || !streetAddress}
+        >
+          XÁC NHẬN
+        </Button>
         </Box>
       </Box>
     </Page>

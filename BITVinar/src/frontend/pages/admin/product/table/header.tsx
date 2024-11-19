@@ -30,7 +30,7 @@ export const TableHeader = () => {
         <input
           type="text"
           className="grow "
-          placeholder="Search"
+          placeholder="Tìm kiếm"
           onChange={(e) => handleSearchProduct(e.target.value)}
         />
         <svg
@@ -47,7 +47,7 @@ export const TableHeader = () => {
         </svg>
       </label>
       <button onClick={() => handleCreatedProduct()} className="btn btn-sm">
-        Create
+        Tạo mới
       </button>
     </div>
   );

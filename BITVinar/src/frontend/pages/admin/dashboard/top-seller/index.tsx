@@ -6,14 +6,14 @@ export const TopSeller = () => {
   const topSellingProducts = useRecoilValue(getTopSellingProductState);
   return (
     <div>
-      <div className="text-center text-xl font-bold">Top Seller</div>
+      <div className="text-center text-xl font-bold">Bán chạy nhất</div>
       <div className="overflow-hidden">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Total Sold</th>
+              <th>Tên sản phẩm</th>
+              <th>Số lượng</th>
             </tr>
           </thead>
           <tbody>

@@ -49,7 +49,7 @@ export const FormController = ({
         <InpWrapper>
           <textarea
             className="textarea textarea-bordered rounded-xl w-full h-32 border-black"
-            placeholder="Type here"
+            placeholder="Nhập ở đây"
             {...register}
             disabled={disable}
             defaultValue=""
@@ -61,7 +61,7 @@ export const FormController = ({
         <InpWrapper>
           <input
             type="checkbox"
-            placeholder="Type here"
+            placeholder="Nhập ở đây"
             className="checkbox"
             {...register}
             disabled={disable}
@@ -73,21 +73,45 @@ export const FormController = ({
         <InpWrapper>
           <input
             type="date"
-            placeholder="Type here"
+            placeholder="Nhập ở đây"
             className="input w-full rounded-xl border-black"
             {...register}
             disabled={disable}
           />
         </InpWrapper>
       );
+    // case "mulcbx":
+    //   return (
+    //     <InpWrapper>
+    //       <div className="grid grid-cols-2 gap-1 p-2 max-h-20 overflow-auto textarea textarea-bordered rounded-xl items-start border-black">
+    //         {arrMulCbx?.map((val: object, key: number) => (
+    //           <label
+    //             htmlFor={val[Object.keys(val)[0]]}
+    //             className="flex items-center"
+    //             key={key}
+    //           >
+    //             <input
+    //               id={val[Object.keys(val)[0]]}
+    //               type="checkbox"
+    //               key={key}
+    //               value={val[Object.keys(val)[0]]}
+    //               {...register}
+    //               disabled={disable}
+    //             />
+    //             {val[Object.keys(val)[1]]}
+    //           </label>
+    //         ))}
+    //       </div>
+    //     </InpWrapper>
+    //   );
     case "mulcbx":
       return (
         <InpWrapper>
-          <div className="grid grid-cols-2 gap-1 p-2 max-h-20 overflow-auto textarea textarea-bordered rounded-xl items-start border-black">
+          <div className="grid grid-cols-2 gap-1 p-2 max-h-40 overflow-auto textarea textarea-bordered rounded-xl items-center border-black">
             {arrMulCbx?.map((val: object, key: number) => (
               <label
                 htmlFor={val[Object.keys(val)[0]]}
-                className="flex items-center"
+                className="flex items-center space-x-2 break-words"
                 key={key}
               >
                 <input
@@ -97,8 +121,11 @@ export const FormController = ({
                   value={val[Object.keys(val)[0]]}
                   {...register}
                   disabled={disable}
+                  className="mr-2"
                 />
-                {val[Object.keys(val)[1]]}
+                <span className="flex-1"> {/* Cho phép văn bản xuống dòng nếu quá dài */}
+                  {val[Object.keys(val)[1]]}
+                </span>
               </label>
             ))}
           </div>
@@ -110,7 +137,7 @@ export const FormController = ({
           <div className="flex justify-between gap-x-2">
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="Nhập ở đây"
               className="input w-1/2 rounded-xl border-black"
               {...register}
               disabled={disable}
@@ -139,7 +166,7 @@ export const FormController = ({
         <InpWrapper>
           <input
             type="text"
-            placeholder="Type here"
+            placeholder="Nhập ở đây"
             className="input rounded-xl border-black"
             {...register}
             disabled={disable}
@@ -154,7 +181,7 @@ export const FormController = ({
             <InpWrapper>
               <input
                 type="text"
-                placeholder="Type here"
+                placeholder="Nhập ở đây"
                 className="input rounded-xl border-black"
                 {...register}
                 disabled={disable}

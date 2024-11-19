@@ -9,6 +9,7 @@ import { ProductItemSkeleton } from "components/skeletons";
 export const ProductListContent: FC = () => {
   // show variant in homepage when clicked (productsState)
   const products = useRecoilValue(productsState);
+  
   return (
     <Section title="Danh sách sản phẩm">
       <Box className="grid grid-cols-2 gap-4">

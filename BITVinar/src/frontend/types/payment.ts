@@ -3,5 +3,5 @@ export type PaymentForOrder = {
   payment_method: string;
   status: string;
   amount: number;
-  description: string;
+  description?: string;
 };

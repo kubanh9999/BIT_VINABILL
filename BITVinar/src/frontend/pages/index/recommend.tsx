@@ -20,7 +20,7 @@ export const RecommendContent: FC = () => {
       const confirmCall = window.confirm('Vui lòng gọi để biết thêm thông tin về sản phẩm.');
 
       if (confirmCall) {
-        window.location.href = 'tel:+84937355143'; // Thay số điện thoại bằng số bạn cần
+        window.location.href = 'tel:02363659118'; // Thay số điện thoại bằng số bạn cần
       }
       return true; // Trả về true nếu đã xử lý cuộc gọi
     }

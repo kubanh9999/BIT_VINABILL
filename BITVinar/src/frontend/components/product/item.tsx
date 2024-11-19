@@ -32,7 +32,7 @@ export const ProductItem: FC<{ product: Product }> = ({ product }) => {
 
       // Nếu người dùng nhấn OK, sẽ thực hiện gọi điện
       if (confirmCall) {
-        window.location.href = 'tel:+84937355143'; // Thay số điện thoại bằng số bạn cần
+        window.location.href = 'tel:02363659118'; // Thay số điện thoại bằng số bạn cần
       }
       return;
     }
@@ -67,7 +67,7 @@ export const ProductItem: FC<{ product: Product }> = ({ product }) => {
     }
     setVisible(false);
     alertAddToCartSuccessfull();
-  };
+  };  
 
   return (
     <ProductPicker product={product}>
@@ -80,7 +80,7 @@ export const ProductItem: FC<{ product: Product }> = ({ product }) => {
           </Box>
           <Text style={styles.productName}>{product.name}</Text>
           <Text size="xSmall" className="text-green pb-2 flex justify-between items-center px-2">
-            {product.price === -1 ? ( "Liên hệ" ) : ( <FinalPrice>{product}</FinalPrice>)}
+            {!product.price ? ( "Liên hệ" ) : ( <FinalPrice>{product}</FinalPrice>)}
             
             <div className=""  onClick={() => handleclick(() => addToCart(product))}><FaShoppingCart size={18}/></div>
           </Text>

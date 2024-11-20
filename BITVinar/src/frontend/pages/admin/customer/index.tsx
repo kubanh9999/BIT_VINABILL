@@ -18,7 +18,7 @@ const rowsTitle = {
 export const CustomerManagePage = () => {
   return (
     <ErrorBoundary fallback={<CustomerManagePage />}>
-    <PageWrapper title={"Quản lý khách hàng"}>
+        <PageWrapper   title={<span style={{ color: "white" }}>Quản lý khách hàng</span>} >
       <Box m={4} className="bg-white rounded-lg">
         <CSTable
           valueRecoilState={customersState}

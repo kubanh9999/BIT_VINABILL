@@ -36,7 +36,7 @@ export const EditPersonInfo: FC<EditPersonInfoProps> = ({ onClose }) => {
           placeholder="Nhập tên của bạn"
           required
           className="form-input"
-          style={{ width: '100%', padding: '10px', border: '1px solid #2e8b57', borderRadius: '4px' }}
+          style={{ width: '100%', padding: '10px', border: '1px solid #009e91', borderRadius: '4px' }}
         />
       </div>
       <div className="form-group" style={{ marginBottom: '20px' }}>
@@ -49,12 +49,12 @@ export const EditPersonInfo: FC<EditPersonInfoProps> = ({ onClose }) => {
           placeholder="Nhập số điện thoại của bạn"
           required
           className="form-input"
-          style={{ width: '100%', padding: '10px', border: '1px solid #2e8b57', borderRadius: '4px' }}
+          style={{ width: '100%', padding: '10px', border: '1px solid #009e91', borderRadius: '4px' }}
         />
       </div>
       <div className="form-actions" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '30px' }}>
-        <button type="submit" className="btn btn-primary" style={{ padding: '10px 20px', backgroundColor: '#2e8b57', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Lưu thông tin</button>
-        <button type="button" onClick={onClose} className="btn btn-secondary" style={{ padding: '10px 20px', backgroundColor: '#f0fff0', color: '#2e8b57', border: '1px solid #2e8b57', borderRadius: '4px', cursor: 'pointer' }}>Hủy bỏ</button>
+        <button type="submit" className="btn btn-primary" style={{ padding: '10px 20px', backgroundColor: '#009e91', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Lưu thông tin</button>
+        <button type="button" onClick={onClose} className="btn btn-secondary" style={{ padding: '10px 20px', backgroundColor: '#ffffff', color: '#2e8b57', border: '1px solid #009e91', borderRadius: '4px', cursor: 'pointer' }}>Hủy bỏ</button>
       </div>
     </form>
   );

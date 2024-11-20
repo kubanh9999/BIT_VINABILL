@@ -79,7 +79,7 @@ export const ProductItem: FC<{ product: Product }> = ({ product }) => {
             />
           </Box>
           <Text style={styles.productName}>{product.name}</Text>
-          <Text size="xSmall" className="text-green pb-2 flex justify-between items-center px-2">
+          <Text size="xSmall" className="text-[#009e91] pb-2 flex justify-between items-center px-2">
             {!product.price ? ( "Liên hệ" ) : ( <FinalPrice>{product}</FinalPrice>)}
             
             <div className=""  onClick={() => handleclick(() => addToCart(product))}><FaShoppingCart size={18}/></div>

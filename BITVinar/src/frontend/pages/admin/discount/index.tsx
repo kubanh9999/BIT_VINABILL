@@ -33,7 +33,7 @@ export const DiscountManagePage = () => {
 
   return (
     <ErrorBoundary fallback={<DiscountManagePage />}>
-    <PageWrapper title={"Quản lý khuyến mãi"}>
+       <PageWrapper   title={<span style={{ color: "white" }}>Quản lý khuyến mãi</span>} >
       <Box m={4} className="bg-white rounded-lg">
         <CSTable
           rowsTitle={rowsTitle}

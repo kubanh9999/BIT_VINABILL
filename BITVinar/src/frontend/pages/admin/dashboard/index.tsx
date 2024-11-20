@@ -33,7 +33,7 @@ export const DashBoardPage = () => {
   if (state === "hasValue")
     return (
       <ErrorBoundary fallback={<DashBoardPage />}>
-      <PageWrapper title={"Bảng điều khiển"}>
+      <PageWrapper   title={<span style={{ color: "white" }}>Bảng điều khiển</span>} >
         <Box m={4} className="bg-white rounded-lg p-4">
           <span className="font-bold text-xl">Doanh thu</span>
           <Box m={4} className="bg-white rounded-lg overflow-auto">
@@ -84,7 +84,7 @@ export const DashBoardPage = () => {
       </ErrorBoundary>
     );
   return (
-    <PageWrapper title={"Bảng điều khiển"}>
+    <PageWrapper title={"Bảng điều khiển"} >
       <Box
         className="bg-white rounded-lg p-4 justify-center items-center flex w-full h-full"
       >

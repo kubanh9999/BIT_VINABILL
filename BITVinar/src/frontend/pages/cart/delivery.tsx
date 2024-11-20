@@ -16,7 +16,7 @@ import { MdNoteAdd } from "react-icons/md";
 
 export const Delivery: FC = () => {
   const [note, setNote] = useRecoilState(orderNoteState);
-  const primaryColor = '#009e91'; // Màu chính
+  const primaryColor = 'black'; // Màu chính
 
   return (
     <Box className="space-y-3 px-4">
@@ -24,11 +24,11 @@ export const Delivery: FC = () => {
       <ListRenderer
         items={[
           {
-            left: <FaLocationDot style={{ color: primaryColor }} className="my-auto" size={20}/>,
+            left: <FaLocationDot style={{ color: "black" }} className="my-auto" size={20}/>,
             right: (<RequestStorePickerLocation />),
           },
           {
-            left: <FaClock style={{ color: primaryColor }} className="my-auto" size={20}/>,
+            left: <FaClock style={{ color: "black" }} className="my-auto" size={20}/>,
             right: (
               <Box flex className="space-x-2">
                 <Box className="flex-1 space-y-[2px]">
@@ -37,13 +37,13 @@ export const Delivery: FC = () => {
                     Thời gian nhận hàng
                   </Text>
                 </Box>
-                <FaChevronCircleRight style={{ color: primaryColor }} size={20}/>
+                <FaChevronCircleRight style={{ color: "black" }} size={20}/>
               </Box>
             ),
           },
 
           {
-            left: <FaUser style={{ color: primaryColor }} className="my-auto" size={20}/>,
+            left: <FaUser style={{ color: "black" }} className="my-auto" size={20}/>,
             right: (
               <Suspense fallback={<RequestPersonPickerPhone />}>
                 <PersonPicker/>
@@ -51,11 +51,11 @@ export const Delivery: FC = () => {
             ),
           },
           {
-            left: <HiGift style={{ color: primaryColor }} size={24} className="my-auto" />,
+            left: <HiGift style={{ color: "black" }} size={24} className="my-auto" />,
             right: <DiscountPicker />,
           },
           {
-            left: <MdNoteAdd style={{ color: primaryColor }} size={20} className="my-auto" />,
+            left: <MdNoteAdd style={{ color: "black" }} size={20} className="my-auto" />,
             right: (
               <Box flex>
                 <ElasticTextarea

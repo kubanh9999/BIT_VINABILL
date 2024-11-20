@@ -40,7 +40,7 @@ export const DiscountPicker: any = () => {
         onClick={async () => {
           setActionSheetVisible(true);
         }}
-        className="border-none bg-transparent text-sm text-primary font-medium text-md m-0 p-0 h-auto text-textPrimary"
+        className="border-none bg-transparent text-sm  font-medium text-md m-0 p-0 h-auto text-black"
       >
         {selectedDiscount.length > 0
           ? selectedDiscount

@@ -25,13 +25,13 @@ export interface ListItemProps {
 //   );
 // };
 export const ListItem: FC<ListItemProps> = ({ title, subtitle, onClick }) => {
-  const primaryColor = '#009e91'; // Màu chính
+  const primaryColor = 'black'; // Màu chính
 
   return (
     <Box flex className="space-x-2" onClick={onClick}>
       <Box className="flex-1 space-y-[2px]">
         {/* Màu chữ cho tiêu đề */}
-        <Text size="small" className="font-medium text-sm text-textPrimary">
+        <Text size="small" className="font-medium text-sm text-black">
           {title}
         </Text>
         {/* Phụ đề có màu xám nhạt */}

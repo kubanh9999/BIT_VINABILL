@@ -18,25 +18,25 @@ const listRender = (handle, navigate, isAdmin) => {
   const primaryColor = '#009e91'; // Màu chính
   const items = [
     {
-      left: <FaUser style={{ color: primaryColor }} size={20} className="inline" />,
+      left: <FaUser style={{ color: 'black' }} size={20} className="inline" />,
       right: (
         <Box flex>
-          <Text.Header style={{ color: primaryColor }} className="flex-1 items-center font-normal">
+          <Text.Header style={{ color: 'black' }} className="flex-1 items-center font-normal">
             Thông tin tài khoản
           </Text.Header>
-          <FaChevronCircleRight style={{ color: primaryColor }} size={20} className="inline" />
+          <FaChevronCircleRight style={{ color: 'black' }} size={20} className="inline" />
         </Box>
       ),
       onclick: handle,
     },
     {
-      left: <FaClock style={{ color: primaryColor }} size={20} className="inline" />,
+      left: <FaClock style={{ color: 'black' }} size={20} className="inline" />,
       right: (
         <Box flex onClick={() => navigate("/order-history")}>
-          <Text.Header style={{ color: primaryColor }} className="flex-1 items-center font-normal">
+          <Text.Header style={{ color: 'black' }} className="flex-1 items-center font-normal">
             Lịch sử đơn hàng
           </Text.Header>
-          <FaChevronCircleRight style={{ color: primaryColor }} size={20} className="inline" />
+          <FaChevronCircleRight style={{ color: 'black' }} size={20} className="inline" />
         </Box>
       ),
       onclick: () => {},
@@ -45,13 +45,13 @@ const listRender = (handle, navigate, isAdmin) => {
 
   if (isAdmin) {
     items.push({
-      left: <IoMdSettings style={{ color: primaryColor }} size={20} className="inline" />,
+      left: <IoMdSettings style={{ color: 'black' }} size={20} className="inline" />,
       right: (
         <Box flex onClick={() => navigate("/admin/dashboard")}>
-          <Text.Header style={{ color: primaryColor }} className="flex-1 items-center font-normal">
+          <Text.Header style={{ color: 'black' }} className="flex-1 items-center font-normal">
             Quản trị
           </Text.Header>
-          <FaChevronCircleRight style={{ color: primaryColor }} size={20} className="inline" />
+          <FaChevronCircleRight style={{ color: 'black' }} size={20} className="inline" />
         </Box>
       ),
       onclick: () => {},
@@ -132,7 +132,7 @@ const Personal: FC<PersonalProps> = ({ setLoading }) => {
   };
 
   return (
-    <Box className="m-4 text-textPrimary">
+    <Box className="m-4 text-black">
       <ListRenderer
         title="Cá nhân"
         items={listRender(handleUserInfo, navigate, getAuth.isAdmin)}
@@ -154,30 +154,30 @@ const Other: FC = () => {
   const primaryColor = '#009e91'; // Màu chính
 
   return (
-    <Box className="m-4 text-textPrimary">
+    <Box className="m-4 text-black">
       <ListRenderer
         title="Khác"
         items={[
           {
-            left: <FaStar style={{ color: primaryColor }} size={20} className="inline"/>,
+            left: <FaStar style={{ color: 'black' }} size={20} className="inline"/>,
             right: (
               <Box flex onClick={() => setSheetVisible(true)}> {/* Show Sheet on click */}
-                <Text.Header style={{ color: primaryColor }} className="flex-1 items-center font-normal">
+                <Text.Header style={{ color: 'black' }} className="flex-1 items-center font-normal">
                   Đánh giá đơn hàng
                 </Text.Header>
-                <FaChevronCircleRight style={{ color: primaryColor }} size={20} className="inline" />
+                <FaChevronCircleRight style={{ color: 'black' }} size={20} className="inline" />
               </Box>
             ),
             onclick: () => {},
           },
           {
-            left: <IoCall style={{ color: primaryColor }} size={20} className="inline" />,
+            left: <IoCall style={{ color: 'black' }} size={20} className="inline" />,
             right: (
               <Box flex>
-                <Text.Header style={{ color: primaryColor }} className="flex-1 items-center font-normal">
+                <Text.Header style={{ color: 'black' }} className="flex-1 items-center font-normal">
                   Liên hệ và góp ý
                 </Text.Header>
-                <FaChevronCircleRight style={{ color: primaryColor }} size={20} className="inline" />
+                <FaChevronCircleRight style={{ color: 'black' }} size={20} className="inline" />
               </Box>
             ),
             onclick: handleContact, 

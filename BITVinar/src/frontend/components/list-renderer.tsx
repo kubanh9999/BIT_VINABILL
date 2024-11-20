@@ -52,10 +52,10 @@ export function ListRenderer<T>({
       {isCollapsed && collapsedItems.length < items.length ? (
         <Box className="p-2">
           <Button
-            style={{ color: primaryColor }}
+            style={{ color: 'black' }}
             onClick={() => setIsCollapsed(false)}
             fullWidth
-            suffixIcon={<FaChevronCircleDown style={{ color: primaryColor }} className="my-1" size={20}/>}
+            suffixIcon={<FaChevronCircleDown style={{ color: 'black' }} className="my-1" size={20}/>}
             variant="tertiary"
             type="neutral"
           >

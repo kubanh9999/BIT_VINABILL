@@ -87,7 +87,7 @@ export const OrderManagePage = () => {
 
   return (
     <ErrorBoundary fallback={<OrderManagePage />}>
-    <PageWrapper title={"Quản lý đơn hàng"}>
+      <PageWrapper   title={<span style={{ color: "white" }}>Quản lý đơn hàng</span>} >
       <Box m={4} className="bg-white rounded-lg">
         <CSTabs tabs={tabs} layoutId="order" />
       </Box>

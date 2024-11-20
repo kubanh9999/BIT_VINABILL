@@ -31,7 +31,7 @@ const ProductManagePage = () => {
 
   return (
     <ErrorBoundary fallback={<ProductManagePage />}>
-    <PageWrapper title={"Quản lý sản phẩm"}>
+       <PageWrapper   title={<span style={{ color: "white" }}>Quản lý sản phẩm</span>} >
       <Box m={4} className="bg-white rounded-lg">
         <TableProductManage />
       </Box>

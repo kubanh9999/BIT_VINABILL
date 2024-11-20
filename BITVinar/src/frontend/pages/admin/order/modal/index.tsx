@@ -9,12 +9,12 @@ export const tabs: Tab[] = [
   {
     tab: <ManageFormTab />,
     icon: <HiClipboardList size={16} className="inline" />,
-    label: "Manage form",
+    label: "Quản lý",
   },
   {
     tab: <OrderDetailTableTab />,
     icon: <HiMenu size={16} className="inline" />,
-    label: "Order detail",
+    label: "Chi tiết",
   },
 ];
 

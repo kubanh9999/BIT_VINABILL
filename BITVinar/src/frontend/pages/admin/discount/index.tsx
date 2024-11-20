@@ -9,6 +9,7 @@ import { useDiscounts } from "hooks/useDiscounts";
 import { useSetRecoilState } from "recoil";
 import { modalVisibleState } from "components/csmodal";
 import { Discount } from "types/discount";
+import { ErrorBoundary } from "react-error-boundary";
 
 const rowsTitle = {
   code: {
@@ -31,6 +32,7 @@ export const DiscountManagePage = () => {
   const selectedDiscount = useSetRecoilState(selectedDiscountState);
 
   return (
+    <ErrorBoundary fallback={<DiscountManagePage />}>
     <PageWrapper title={"Quản lý khuyến mãi"}>
       <Box m={4} className="bg-white rounded-lg">
         <CSTable
@@ -59,5 +61,6 @@ export const DiscountManagePage = () => {
       </Box>
       <ModalManageDiscount />
     </PageWrapper>
+    </ErrorBoundary>
   );
 };

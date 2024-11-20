@@ -4,6 +4,7 @@ import { ModalManageCustomer } from "./modal";
 import { CSTable } from "components/cstable";
 import { customersState, selectedCustomerState } from "./state";
 import { PageWrapper } from "components/page-wrapper";
+import { ErrorBoundary } from "react-error-boundary";
 
 const rowsTitle = {
   name: {
@@ -16,6 +17,7 @@ const rowsTitle = {
 
 export const CustomerManagePage = () => {
   return (
+    <ErrorBoundary fallback={<CustomerManagePage />}>
     <PageWrapper title={"Quản lý khách hàng"}>
       <Box m={4} className="bg-white rounded-lg">
         <CSTable
@@ -27,5 +29,6 @@ export const CustomerManagePage = () => {
       </Box>
       <ModalManageCustomer />
     </PageWrapper>
+    </ErrorBoundary>
   );
 };

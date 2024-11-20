@@ -55,7 +55,7 @@ const InfoUserPage: React.FC = () => {
           <Text className="text-center">Số điện thoại: {phone}</Text> 
         </Box>
       </Modal>
-        <Header title="Hồ sơ của tôi" showBackIcon={true}></Header>
+        <Header title="Hồ sơ của tôi" className='bg-[#009e91]' showBackIcon={true}></Header>
         <div style={styles.container}>
             <div style={styles.content}>
                 <form onSubmit={handleEditCustomer} style={styles.form}>

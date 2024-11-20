@@ -55,9 +55,9 @@ const InfoUserPage: React.FC = () => {
           <Text className="text-center">Số điện thoại: {phone}</Text> 
         </Box>
       </Modal>
-        <Header title="Hồ sơ của tôi" className='bg-[#009e91] text-white' showBackIcon={true}></Header>
+        <Header title="Hồ sơ của tôi" className='bg-textPrimary text-white' showBackIcon={true}></Header>
         <div style={styles.container}>
-            <div style={styles.content}>
+            <div style={styles.content} className='bg-textPrimary'>
                 <form onSubmit={handleEditCustomer} style={styles.form}>
                     <div style={styles.formGroup}>
                         <label htmlFor="username" style={styles.label}>Tên người dùng
@@ -85,7 +85,7 @@ const InfoUserPage: React.FC = () => {
                             style={styles.input}
                             required />
                     </div>
-                    <button type="submit" style={styles.submitButton}>Chỉnh sửa thông tin</button>
+                    <button type="submit" className='text-textPrimary' style={styles.submitButton}>Chỉnh sửa thông tin</button>
                 </form>
             </div>
         </div></>
@@ -106,7 +106,6 @@ const styles = {
         width: '100%',
         maxWidth: '500px',
         padding: '40px',
-        backgroundColor: '#009e91',
         borderRadius: '10px',
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
         textAlign: 'center' as 'center',
@@ -146,7 +145,7 @@ const styles = {
     submitButton: {
         padding: '12px',
         backgroundColor: '#ffffff',
-        color: '#009e91',
+        // color: 'var(--textPrimary)',
         border: 'none',
         borderRadius: '6px',
         cursor: 'pointer',
@@ -160,8 +159,8 @@ const styles = {
         top: '20px',
         left: '20px',
         padding: '10px 20px',
-        backgroundColor: '#009e91',
-        color: '#009e91',
+        backgroundColor: "#000",
+        color: "#000",
         border: 'none',
         borderRadius: '6px',
         cursor: 'pointer',

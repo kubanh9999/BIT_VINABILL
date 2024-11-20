@@ -76,7 +76,7 @@ export const CSBottomNavigation: FC = () => {
   // tab["/cart"].notify = cartItem.length;
 
   return (
-    <Box className="sticky bg-[#009e91] bottom-0 w-full py-5 pb-8 shadow-lg z-50 overflow-hidden">
+    <Box className="sticky bg-textPrimary bottom-0 w-full py-5 pb-8 shadow-lg z-50 overflow-hidden">
       <div className="relative px-8 flex justify-between flex-nowrap">
         {Object.keys(tab).map((path) => (
           <NavLink

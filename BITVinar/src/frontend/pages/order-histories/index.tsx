@@ -14,7 +14,7 @@ import { Box, Button, Header, Page, Text, Spinner } from "zmp-ui";
 const OrderHistoryPageWrapper = ({ children }) => {
   return (
     <Page className="flex flex-col">
-      <Header title="Lịch sử đơn hàng" className='bg-[#009e91] text-white' showBackIcon={true} />
+      <Header title="Lịch sử đơn hàng" className='bg-textPrimary text-white' showBackIcon={true} />
       {children}
     </Page>
   );

@@ -6,7 +6,7 @@ export const PageWrapper = ({ children, title }) => {
   const navigate = useNavigate();
   return (
     <Page>
-      <Header className='bg-[#009e91]' title={title} onBackClick={() => navigate("/")} />
+      <Header className='bg-textPrimary' title={title} onBackClick={() => navigate("/")} />
       {children}
     </Page>
   );

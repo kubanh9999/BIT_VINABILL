@@ -137,7 +137,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ onSaveAddress }) => {
             marginTop: "16px",
             backgroundColor: !selectedWard || !streetAddress
               ? '#cccccc' // Màu khi nút bị khóa
-              : '#009e91', // Màu khi nút hoạt động
+              : "var(--textPrimary)", // Màu khi nút hoạt động
             color: 'white', // Màu chữ
             cursor: !selectedWard || !streetAddress
               ? 'not-allowed' // Con trỏ khi nút bị khóa

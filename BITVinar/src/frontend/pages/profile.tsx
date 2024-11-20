@@ -218,7 +218,7 @@ const ProfilePage: FC = () => {
           <Spinner />
         </div>
       )}
-      <Header showBackIcon={false} title="&nbsp;" className="bg-[#009e91]"/>
+      <Header showBackIcon={false} title="&nbsp;" className="bg-textPrimary"/>
       {!loading && (
         <>
           <Subscription></Subscription>

@@ -38,7 +38,7 @@ const ContactButton = ({ product }) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-[#009e91] text-white p-3 rounded flex items-center justify-center gap-2"
+        className="w-full bg-textPrimary text-white p-3 rounded flex items-center justify-center gap-2"
       >
         <Phone className="w-5 h-5" />
         <span>Liên hệ ngay</span>

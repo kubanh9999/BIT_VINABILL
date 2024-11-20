@@ -9,7 +9,7 @@ const SearchPage: FC = () => {
   return (
     <Page className="flex flex-col">
        
-      <Header backIcon={<CiSearch size={24}/> } title="Tìm kiếm" />
+      <Header backIcon={<CiSearch size={24}/> } title="Tìm kiếm" className="bg-textPrimary"/>
       <Inquiry />
       <SearchResult />
     </Page>

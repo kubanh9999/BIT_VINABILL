@@ -88,7 +88,7 @@ export const DashBoardPage = () => {
       <Box
         className="bg-white rounded-lg p-4 justify-center items-center flex w-full h-full"
       >
-        <span className="bg-[#009e91] loading loading-lg loading-bars"></span>
+        <span className="bg-textPrimary loading loading-lg loading-bars"></span>
       </Box>
     </PageWrapper>
   );

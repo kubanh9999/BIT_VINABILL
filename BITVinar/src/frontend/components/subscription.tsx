@@ -16,7 +16,7 @@ export const Subscription: FC = () => {
     return (
       <Box className="m-4" onClick={onClick}>
         <Box
-          className="bg-[#009e91] text-white rounded-xl p-4 space-y-2"
+          className="bg-textPrimary text-white rounded-xl p-4 space-y-2"
           style={{
             backgroundImage: `url(${subscriptionDecor})`,
             backgroundPosition: "right 8px center",

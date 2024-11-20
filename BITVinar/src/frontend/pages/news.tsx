@@ -70,7 +70,7 @@ const NewsList: FC = () => {
                 </Text>
               </div>
               <button
-                className="btn text-white" style={{ background: "#009e91" }} 
+                className="btn text-white bg-textPrimary" 
                 onClick={() => navigate(`/news/${news.id}`)}
               >
                 Xem Thêm
@@ -86,7 +86,7 @@ const NewsList: FC = () => {
 const NewsListPage: FC = () => {
   return (
     <Page>
-      <Header title="Tin tức và sự kiện" showBackIcon={false} className="text-white bg-[#009e91]"  />
+      <Header title="Tin tức và sự kiện" showBackIcon={false} className="text-white bg-textPrimary"  />
       <Divider />
       <NewsList />
     </Page>

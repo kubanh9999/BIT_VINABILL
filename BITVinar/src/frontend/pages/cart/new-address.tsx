@@ -42,7 +42,7 @@ export const NewAddress: React.FC = () => {
         title="Thêm địa chỉ mới"
         showBackIcon={true}
         onBackClick={handleBackClick}
-        className="bg-[#009e91] text-white"
+        className="bg-textPrimary text-white"
       />
       <Box
         className="section-container"

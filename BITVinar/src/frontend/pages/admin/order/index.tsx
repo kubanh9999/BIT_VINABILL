@@ -12,6 +12,7 @@ import { CSModal } from "components/csmodal";
 import { CSTabs, Tab } from "components/cstabs";
 import { HiClipboardList, HiMenu } from "react-icons/hi";
 import { Order } from "types/order";
+import { ErrorBoundary } from "react-error-boundary";
 
 // export const tabs: Tab[] = [
 //   {
@@ -85,11 +86,13 @@ export const OrderManagePage = () => {
   ];
 
   return (
+    <ErrorBoundary fallback={<OrderManagePage />}>
     <PageWrapper title={"Quản lý đơn hàng"}>
       <Box m={4} className="bg-white rounded-lg">
         <CSTabs tabs={tabs} layoutId="order" />
       </Box>
       <ModalManageOrder />
     </PageWrapper>
+    </ErrorBoundary>
   );
 };

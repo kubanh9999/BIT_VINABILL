@@ -12,6 +12,7 @@ import {
 import { TopSeller } from "./top-seller";
 import { displayInputDate } from "utils/date";
 import { LoadingRows } from "components/cstable/loading-rows";
+import { ErrorBoundary } from "react-error-boundary";
 
 export const DashBoardPage = () => {
   const yearRevenueTotal = useRecoilValueLoadable(getYearReveneTotalState);
@@ -31,6 +32,7 @@ export const DashBoardPage = () => {
   let { state, contents } = yearDiscountAmountTotal;
   if (state === "hasValue")
     return (
+      <ErrorBoundary fallback={<DashBoardPage />}>
       <PageWrapper title={"Bảng điều khiển"}>
         <Box m={4} className="bg-white rounded-lg p-4">
           <span className="font-bold text-xl">Doanh thu</span>
@@ -79,13 +81,14 @@ export const DashBoardPage = () => {
           </Box>
         </Box>
       </PageWrapper>
+      </ErrorBoundary>
     );
   return (
-    <PageWrapper title={"Dashboard"}>
+    <PageWrapper title={"Bảng điều khiển"}>
       <Box
         className="bg-white rounded-lg p-4 justify-center items-center flex w-full h-full"
       >
-        <span className="loading loading-lg loading-bars"></span>
+        <span className="bg-[#009e91] loading loading-lg loading-bars"></span>
       </Box>
     </PageWrapper>
   );

@@ -15,6 +15,7 @@ import { selectedFileState, selectedProductState } from "../../state";
 import { formFields } from "./form-field";
 import { CSForm } from "components/csform";
 import { modalVisibleState } from "components/csmodal";
+import { useNavigate } from "react-router-dom";
 
 export const ManageProductForm = () => {
   const variants = useRecoilValueLoadable(variantState);
@@ -24,15 +25,35 @@ export const ManageProductForm = () => {
   const { addProduct, updateProduct } = useProducts();
   const refresh = useRecoilRefresher_UNSTABLE(productsState);
   const setModalVisible = useSetRecoilState(modalVisibleState);
+  const navigate = useNavigate();
+  function convertToHTML(text) {
+    if (!text) return '';
+
+    // 1. Escaping các ký tự đặc biệt trong HTML
+    const escapedText = text
+        .replace(/&/g, '&amp;') // Thay thế ký tự &
+        .replace(/</g, '&lt;') // Thay thế ký tự <
+        .replace(/>/g, '&gt;') // Thay thế ký tự >
+        .replace(/"/g, '&quot;') // Thay thế ký tự "
+
+    // 2. Thay thế xuống dòng thành <br>
+    return escapedText.replace(/\n/g, '<br>');
+}
+
   const handleSubmitProduct = (val: Product) => {
     let submitProduct = _.merge(val, { image: selectedFile });
 
     //
     if (!submitProduct.id) {
+      submitProduct.description = convertToHTML(submitProduct.description);
+
+      console.log("Sản phẩm cần tạo sau khi chuyển đổi: ", submitProduct);
+      
       addProduct(submitProduct, true);
     } else {
       updateProduct(submitProduct, true);
     }
+    navigate('/admin/product');
   };
 
   const handleOnChangeFile = (e) => {

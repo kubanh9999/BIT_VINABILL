@@ -14,6 +14,7 @@ import { SingleOptionPicker } from "./single-option-picker";
 import { useToBeImplemented } from "hooks/hooks";
 import subscriptionDecor from "static/subscription-decor.svg";
 import { ErrorBoundary } from "react-error-boundary";
+import ContactButton from "./contact_button";
 // import { Radio } from "react-bootstrap";
 
 export interface ProductPickerProps {
@@ -68,6 +69,8 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
   const [quantity, setQuantity] = useState(1);
   const setCart = useSetRecoilState(cartState);
   useRecoilValue(cartStorageState);
+
+  const primaryColor = "#009e91"
 
   const alertAddToCartSuccessfull = useToBeImplemented({
     position: "top",
@@ -137,6 +140,7 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
     setVisible(false);
     alertAddToCartSuccessfull();
   };
+  
   return (
     <>
       {children({
@@ -144,9 +148,10 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
         close: () => setVisible(false),
       })}
       {createPortal(
-        <Sheet visible={visible} onClose={() => setVisible(false)} autoHeight>
+        <Sheet visible={visible} onClose={() => setVisible(false)}
+        style={{maxHeight: "90%", overflowY: "auto",overflow: "visible",}}>
           {product && (
-            <Page className="space-y-2 mt-1 mx-1">
+            <Box className="space-y-6 mt-2" p={4} style={{maxHeight:"100%", overflow: "visible",}}>
               <Box className="space-y-2">
                 <Text.Title>{product.name}</Text.Title>
                 <Text>
@@ -190,33 +195,44 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
                       />
                     )
                   )}
-                <QuantityPicker value={quantity} onChange={setQuantity} />
-                {selected ? (
-                  <Button
-                    variant={quantity > 0 ? "primary" : "secondary"}
-                    type={quantity > 0 ? "highlight" : "neutral"}
-                    fullWidth
-                    onClick={addToCart}
-                  >
-                    {quantity > 0
-                      ? selected
-                        ? "Cập nhật giỏ hàng"
-                        : "Thêm vào giỏ hàng"
-                      : "Xoá"}
-                  </Button>
-                ) : (
-                  <Button
-                    disabled={!quantity}
-                    variant="primary"
-                    type="highlight"
-                    fullWidth
-                    onClick={addToCart}
-                  >
-                    Thêm vào giỏ hàng
-                  </Button>
-                )}
+                  {
+                    product.price ? (
+                      <>
+                        <QuantityPicker value={quantity} onChange={setQuantity} />
+                        {selected ? (
+                          <Button
+                            style={{backgroundColor: primaryColor}}
+                            variant={quantity > 0 ? "primary" : "secondary"}
+                            type={quantity > 0 ? "highlight" : "neutral"}
+                            fullWidth
+                            onClick={addToCart}
+                          >
+                            {quantity > 0
+                              ? selected
+                                ? "Cập nhật giỏ hàng"
+                                : "Thêm vào giỏ hàng"
+                              : "Xoá"}
+                          </Button>
+                        ) : (
+                          <Button
+                            style={{backgroundColor: primaryColor}}
+                            disabled={!quantity}
+                            variant="primary"
+                            type="highlight"
+                            fullWidth
+                            onClick={addToCart}
+                          >
+                            Thêm vào giỏ hàng
+                          </Button>
+                        )} 
+                      </>
+                    ):(
+                      <ContactButton product={product}/>
+                    )
+                  }
+                
               </Box>
-            </Page>
+            </Box>
           )}
         </Sheet>,
         document.body

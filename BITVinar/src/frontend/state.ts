@@ -18,6 +18,7 @@ import { getStorage, setStorage, requestSendNotification } from "zmp-sdk/apis";
 import { Auth } from "types/auth";
 import { Customer } from "types/customer";
 import { Discount } from "types/discount";
+import { CustomerService } from "api/services/customer.service";
 
 export const getPhonenumber = async (accessToken) => {
   var phoneCode = await getPhoneNumber();
@@ -72,7 +73,7 @@ export const userInfoState = selector({
 
 
 
- export const sendNotification = async () => {
+export const sendNotification = async () => {
   try {
     await requestSendNotification({});
   } catch (error) {
@@ -117,16 +118,30 @@ export const userState = selector({
 // };
 
 export const getUserCurrent = async (): Promise<Customer> => {
-  const userInfo = await getUserInfo();
+  const { userInfo } = await getUserInfo();
   await getAccessToken();
-  const name = userInfo.userInfo.name || "";
-  const phone_number = "";
 
+  const userFromDb = await CustomerService.getById(userInfo.id)
+  
+  console.log("Co khong ", !userFromDb);
+  
+
+  if (!userFromDb) {
+    const name = userInfo.name || "";
+    const phone_number = "";
+
+    return {
+      id: userInfo.id,
+      name,
+      phone_number,
+    };
+  }
   return {
-    id: userInfo.userInfo.id,
-    name,
-    phone_number,
+    id: userFromDb.id,
+    name: userFromDb.name,
+    phone_number: userFromDb.phone_number,
   };
+
 };
 export const newsState = selector<any>({
   key: "news",
@@ -198,12 +213,12 @@ export const productsState = selector<Product[]>({
 
     return products.map(
       (product) =>
-        ({
-          ...product,
-          variants: variants.filter((variant) =>
-            product.variantId.includes(variant.id)
-          ),
-        } as Product)
+      ({
+        ...product,
+        variants: variants.filter((variant) =>
+          product.variantId.includes(variant.id)
+        ),
+      } as Product)
     );
   },
 });
@@ -227,9 +242,9 @@ export const recommendProductsState = selector<Product[]>({
   key: "recommendProducts",
   get: ({ get }) => {
     const products = get(productsState);
-    const recommend = products.filter(products => products.isFeatured === true );
+    const recommend = products.filter(products => products.isFeatured === true);
 
-    return recommend.length > 0 ?  [...new Array(3)].map(
+    return recommend.length > 0 ? [...new Array(3)].map(
       () => recommend[Math.floor(Math.random() * recommend.length)]
     ) : [];
   },
@@ -315,7 +330,7 @@ export const paymentSelector = selector({
       if (order && order.customer_id) {
         if (paymentStatus === "SUCCESS" || paymentStatus === "PENDING") {
           const orderResult = await OrderService.create(order);
-          console.log("Order result: ", orderResult);          
+          console.log("Order result: ", orderResult);
           if (orderResult) {
             OrderService.createPayment(payment);
           }
@@ -398,7 +413,7 @@ export const totalPriceState = selector({
     (discounts[0] as Discount)?.conditions?.map((condition) => {
       return (discountValue =
         condition.conditionType === "MAX_DISCOUNT_VALUE" &&
-        condition.value < discountValue
+          condition.value < discountValue
           ? condition.value
           : discountValue);
     });

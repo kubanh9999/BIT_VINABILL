@@ -55,7 +55,7 @@ const InfoUserPage: React.FC = () => {
           <Text className="text-center">Số điện thoại: {phone}</Text> 
         </Box>
       </Modal>
-        <Header title="Hồ sơ của tôi" showBackIcon={true}></Header>
+        <Header title="Hồ sơ của tôi" className='bg-[#009e91] text-white' showBackIcon={true}></Header>
         <div style={styles.container}>
             <div style={styles.content}>
                 <form onSubmit={handleEditCustomer} style={styles.form}>
@@ -99,21 +99,21 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        backgroundColor: '#e6ffe6',
+        backgroundColor: '#fff',
         padding: '20px',
     },
     content: {
         width: '100%',
         maxWidth: '500px',
         padding: '40px',
-        backgroundColor: '#fff',
+        backgroundColor: '#009e91',
         borderRadius: '10px',
         boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
         textAlign: 'center' as 'center',
     },
     title: {
         fontSize: '2rem',
-        color: '#2e8b57',
+        color: '#ffffff',
         marginBottom: '10px',
     },
     subtitle: {
@@ -132,7 +132,7 @@ const styles = {
     },
     label: {
         marginBottom: '5px',
-        color: '#2e8b57',
+        color: 'white',
         fontWeight: 'bold' as 'bold',
     },
     input: {
@@ -145,8 +145,8 @@ const styles = {
     },
     submitButton: {
         padding: '12px',
-        backgroundColor: '#2e8b57',
-        color: '#fff',
+        backgroundColor: '#ffffff',
+        color: '#009e91',
         border: 'none',
         borderRadius: '6px',
         cursor: 'pointer',
@@ -160,8 +160,8 @@ const styles = {
         top: '20px',
         left: '20px',
         padding: '10px 20px',
-        backgroundColor: '#2e8b57',
-        color: '#fff',
+        backgroundColor: '#009e91',
+        color: '#009e91',
         border: 'none',
         borderRadius: '6px',
         cursor: 'pointer',

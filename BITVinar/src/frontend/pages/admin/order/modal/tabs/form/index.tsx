@@ -31,7 +31,7 @@ export const ManageFormTab = () => {
           onClick={() => updateOrderStatus(selectedOrder.id, "SUCCESS")}
           className="btn btn-neutral"
         >
-          Approved
+          Xác nhận
         </button>
       )}
       <button
@@ -39,7 +39,7 @@ export const ManageFormTab = () => {
         onClick={() => updateOrderStatus(selectedOrder.id, "REJECT")}
         className="btn btn-error"
       >
-        Reject
+        Từ chối
       </button>
     </div>
   )}

@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "PhuMinhTam",
+    "title": "Vinar",
     "headerColor": "",
     "textColor": "black",
     "statusBarColor": "#ffffff",
@@ -24,7 +24,7 @@
   ],
   "template": {
     "primaryColor": "#FF0000",
-    "greenColor": "green",
+    "greenColor": "#009e91",
     "prefixCurrencySymbol": false,
     "currencySymbol": "đ",
     "headerLogo": ""

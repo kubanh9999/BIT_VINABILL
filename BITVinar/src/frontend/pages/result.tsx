@@ -40,8 +40,8 @@ interface RenderResultProps {
 }
 
 interface CheckoutResult extends CheckTransactionReturns {
-  status: any;
-  amount: number;
+  status?: any;
+  amount?: number;
 }
 
 const CheckoutResultPage: FC = () => {
@@ -59,7 +59,7 @@ const ResultContent: FC = () => {
   const navigate = useNavigate();
   const userCurrent = useRecoilValue(userCurrentState);
   const [paymentResult, setPaymentResult] = useState<
-    CheckTransactionReturns | AsyncCallbackFailObject
+  CheckoutResult | AsyncCallbackFailObject
   >();
   const [productsInCart, setProductsInCart] = useRecoilState(cartState);
   const quantity = useRecoilValue(totalQuantityState);
@@ -69,7 +69,9 @@ const ResultContent: FC = () => {
   const shippingAddress = useRecoilValue(selectedAddressState);
   const setPaymentStatus = useSetRecoilState(paymentResultState);
   const setPayment = useSetRecoilState(paymentState);
+  const payment = useRecoilState(paymentState)
   const setInvoice = useSetRecoilState(invoiceState);
+  const invoice = useRecoilState(invoiceState)
   const discounts = useRecoilValue<Discount[]>(selectedDiscountToOrderState);
   const resetDiscount = useResetRecoilState(selectedDiscountToOrderState);
   const resetpaymentResultState = useResetRecoilState(paymentResultState);
@@ -95,13 +97,17 @@ const ResultContent: FC = () => {
     const check = () => {
       let data = state;
       if (typeof data === "string" && data.includes("/result")) {
+        console.log("data nhận được: ", data);
         Payment.checkTransaction({
           data,
           success: (rs) => {
-            if (rs) {
+            console.log("kết quả check transaction: ", rs);
+            if (rs.resultCode === 1 || (rs.resultCode === 0 && payment_methods_NOT_CHECKED.includes(rs.method))) {
+              console.log("thỏa rs");
+              
               createOrder(rs);
             }
-            setPaymentStatus(rs.status);
+            setPaymentStatus((rs as CheckoutResult).status);
             setPaymentResult(rs);
 
             if (rs.resultCode === 0) {
@@ -128,21 +134,32 @@ const ResultContent: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (paymentResult?.resultCode >= 0) {
+    console.log("(result) payment result được cập nhật: ", paymentResult);
+    if (paymentResult && (paymentResult?.resultCode === 1 || (paymentResult?.resultCode === 0 && payment_methods_NOT_CHECKED.includes(paymentResult?.method)))) {
+      console.log("thực hiện reset");
+      
       setProductsInCart([]);
       resetDiscount();
       resetpaymentResultState();
     }
   }, [paymentResult]);
 
+  useEffect(()=>{
+    console.log("payment có được: ", payment)
+  },[payment])
+  useEffect(()=>{
+    console.log("invoice có được: ", invoice)
+  },[invoice])
 
   const createOrder = (rs: any) => {
+    console.log("rs nhận được để tạo order: ", rs);
+    
     setPayment({
       order_id: rs.orderId,
       payment_method: rs?.method,
       status: rs?.status,
       amount: rs?.amount,
-      description: rs?.msg,
+      description: rs?.msg || "",
     });
 
     setInvoice({
@@ -170,7 +187,7 @@ const ResultContent: FC = () => {
   if (paymentResult) {
     return (
       <Page className="flex flex-col">
-        <Header title="Kết quả thanh toán" />
+        <Header title="Kết quả thanh toán" className="bg-[#009e91] text-white"/>
         {(function (render: (result: RenderResultProps) => ReactNode) {
           if ("resultCode" in paymentResult) {
             if (paymentResult?.resultCode === 1) {
@@ -181,7 +198,7 @@ const ResultContent: FC = () => {
               });
             }
             if (
-              paymentResult?.resultCode === 0 ||
+              (paymentResult?.resultCode === 0 && payment_methods_NOT_CHECKED.includes(paymentResult?.method)) ||
               payment_methods_NOT_CHECKED.includes(paymentResult?.method)
             ) {
               return render({

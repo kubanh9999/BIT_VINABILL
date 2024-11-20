@@ -54,7 +54,7 @@ export const TimePicker: FC = () => {
       mask
       maskClosable
       onVisibilityChange={(visbile) => matchStatusBarColor(visbile)}
-      inputClass="border-none bg-transparent text-sm text-green font-medium text-md m-0 p-0 h-auto"
+      inputClass="border-none bg-transparent text-sm font-medium text-md m-0 p-0 h-auto text-black"
       placeholder="Chọn thời gian nhận hàng"
       title="Thời gian nhận hàng"
       value={{

@@ -67,7 +67,7 @@ export const TableProductManage = () => {
                   handleEditProduct(val);
                 }}
               >
-                Edit
+                Sửa
               </button>
               <button
                 className="btn"
@@ -75,7 +75,7 @@ export const TableProductManage = () => {
                   handleDeleteProduct(val.id);
                 }}
               >
-                Delete
+                Xóa
               </button>
             </div>
           </div>

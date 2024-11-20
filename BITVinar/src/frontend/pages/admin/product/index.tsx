@@ -5,6 +5,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { ModalManageProduct } from "./modal";
 import { imageUrlState, selectedFileState } from "./state";
 import { PageWrapper } from "components/page-wrapper";
+import { ErrorBoundary } from "react-error-boundary";
 
 const ProductManagePage = () => {
   const inputUploadRef = useRef<HTMLInputElement>();
@@ -29,12 +30,14 @@ const ProductManagePage = () => {
   }, [selectedFile]);
 
   return (
-    <PageWrapper title={"Quản lý sản phẩm"}>
+    <ErrorBoundary fallback={<ProductManagePage />}>
+       <PageWrapper   title={<span style={{ color: "white" }}>Quản lý sản phẩm</span>} >
       <Box m={4} className="bg-white rounded-lg">
         <TableProductManage />
       </Box>
       <ModalManageProduct />
     </PageWrapper>
+    </ErrorBoundary>
   );
 };
 

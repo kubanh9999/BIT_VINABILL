@@ -34,29 +34,76 @@ const NewDetailPage: FC = () => {
   }
 
   // Add custom inline styles for <ul> and <li>
+  // const styledContent = `
+  //   <style>
+  //     ul {
+  //     display: block;
+  //       list-style-type: disc;
+  //       padding-left: 16px;
+  //     }
+  //     li {
+  //     display: inline-block;
+  //       text-align: left;
+  //       font-weight: 500;
+  //       margin: 0;
+  //     text-align: left;
+
+  //     }
+  //   </style>
+    
+  //   ${blog.content}
+  // `;
   const styledContent = `
     <style>
+      /* Container Styles */
+      .wordpress-content {
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Headings */
+      h1, h2, h3 {
+        font-weight: 600;
+        margin: 1.2em 0 0.5em;
+        color: #111;
+      }
+      h1 {
+        font-size: 1.5em; /* Kích thước tương tự template cũ */
+      }
+      h2 {
+        font-size: 1.3em; /* Điều chỉnh nhỏ hơn */
+      }
+      h3 {
+        font-size: 1.2em; /* Điều chỉnh nhỏ hơn */
+      }
+
+      /* Paragraphs */
+      p {
+        margin-bottom: 1em;
+        text-align: justify;
+      }
+
+      /* Lists */
       ul {
-      display: block;
+        display: block;
         list-style-type: disc;
         padding-left: 16px;
+        margin: 1em 0;
       }
       li {
-      display: inline-block;
-        text-align: left;
-        font-weight: 500;
-        margin: 0;
-      text-align: left;
-
+        margin-bottom: 0.5em;
       }
     </style>
-    
+
     ${blog.content}
   `;
 
+
+
   return (
     <Page>
-      <Header title={"Chi tiết tin tức"} className="mr-10" />
+      <Header title={"Chi tiết tin tức"} className="mr-10 text-white bg-[#009e91]"  />
       <Divider />
       <Box className="p-4">
         {blog ? (

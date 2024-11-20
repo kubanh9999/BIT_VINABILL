@@ -2,8 +2,8 @@
 
   "test": {
     "username": "root",
-    "password": "",
-    "database": "dbdbdb",
+    "password": "root",
+    "database": "vinardb",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql",

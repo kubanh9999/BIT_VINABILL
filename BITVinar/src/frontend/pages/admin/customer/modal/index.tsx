@@ -10,17 +10,17 @@ export const tabs: Tab[] = [
   {
     tab: <DetailFormTab />,
     icon: <HiClipboardList size={16} className="inline" />,
-    label: "Detail",
+    label: "Chi tiết",
   },
   {
     tab: <OrderTableTab />,
     icon: <HiMenu size={16} className="inline" />,
-    label: "Order",
+    label: "Đặt hàng",
   },    
   {
     tab: <FeedbackTab />,
     icon: <HiDocumentText size={16} className="inline" />,
-    label: "Feedback",
+    label: "Đánh giá",
   },
 ];
 

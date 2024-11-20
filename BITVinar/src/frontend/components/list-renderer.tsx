@@ -24,13 +24,14 @@ export function ListRenderer<T>({
   noDivider,
 }: ListRendererProps<T>) {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const primaryColor = '#009e91'; // Màu chính
 
   const collapsedItems = useMemo(() => {
     return items?.slice(0, limit);
   }, [items]);
   return (
     <Box className="bg-background rounded-xl">
-      {title && <Text.Title className="p-4 pb-0">{title}</Text.Title>}
+      {title && <Text.Title className="p-4 pb-0 "  >{title}</Text.Title>}
       <Box>
         {(isCollapsed ? collapsedItems : items).map((item, i, list) => (
           <div
@@ -51,9 +52,10 @@ export function ListRenderer<T>({
       {isCollapsed && collapsedItems.length < items.length ? (
         <Box className="p-2">
           <Button
+            style={{ color: 'black' }}
             onClick={() => setIsCollapsed(false)}
             fullWidth
-            suffixIcon={<FaChevronCircleDown className="my-1" size={20}/>}
+            suffixIcon={<FaChevronCircleDown style={{ color: 'black' }} className="my-1" size={20}/>}
             variant="tertiary"
             type="neutral"
           >
@@ -61,7 +63,7 @@ export function ListRenderer<T>({
           </Button>
         </Box>
       ) : (
-        <Box className="w-full h-4"></Box>
+        <Box className="w-full h-4 "></Box>
       )}
     </Box>
   );

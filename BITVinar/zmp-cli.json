@@ -1,6 +1,6 @@
 {
   "cwd": "/Users/lap15182-local/Desktop/zalo/zaui-coffee",
-  "name": "PhuMinhTam App",
+  "name": "vinar App",
   "framework": "react-typescript",
   "cssPreProcessor": "scss",
   "includeTailwind": true,

@@ -14,7 +14,7 @@ export const CustomerService = {
 
   getById: async (id: string): Promise<Customer> => {
     try {
-      return await AxiosClient.post(`/customer/${id}`);
+      return await AxiosClient.get(`/customer/${id}`);
     } catch (error) {
       return {} as Customer;
     }

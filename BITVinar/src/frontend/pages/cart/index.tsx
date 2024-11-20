@@ -15,7 +15,7 @@ const CartPage: FC = () => {
 
   return (
     <Page className="flex flex-col">
-      <Header title="Giỏ hàng" showBackIcon={false} className="bg-[#009e91] text-white"/>
+      <Header title="Giỏ hàng" showBackIcon={false} className="bg-textPrimary text-white"/>
       <CartItems />
       {cart.length > 0 && (
         <>

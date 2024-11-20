@@ -18,7 +18,7 @@ export const Welcome: FC = () => {
 
   return (
     <Header
-      className="app-header no-border pl-4 flex-none pb-[6px]  bg-[#009e91]"
+      className="app-header no-border pl-4 flex-none pb-[6px]  bg-textPrimary"
       showBackIcon={false}
       title={
         (

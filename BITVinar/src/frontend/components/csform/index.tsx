@@ -138,7 +138,7 @@ export const CSForm = ({
       })}
       {onCSSubmit &&
         (btnSubmit || (
-          <button type="submit" className="btn btn-neutral rounded-md">
+          <button type="submit" className="btn btn-neutral rounded-md bg-textPrimary">
             Lưu
           </button>
         ))}

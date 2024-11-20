@@ -13,7 +13,7 @@ const ContactPage: FC = () => {
 
   return (
     <>
-      <Header title="Liên hệ" showBackIcon={true} className="bg-[#009e91] text-white" />
+      <Header title="Liên hệ" showBackIcon={true} className="bg-textPrimary text-white" />
       <Page>
         <Box className="m-4 space-y-4">
           <Box className="space-y-2">

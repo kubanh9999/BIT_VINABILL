@@ -70,8 +70,6 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
   const setCart = useSetRecoilState(cartState);
   useRecoilValue(cartStorageState);
 
-  const primaryColor = "#009e91"
-
   const alertAddToCartSuccessfull = useToBeImplemented({
     position: "top",
     text:
@@ -201,8 +199,8 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
                         <QuantityPicker value={quantity} onChange={setQuantity} />
                         {selected ? (
                           <Button
-                            style={{backgroundColor: primaryColor}}
-                            variant={quantity > 0 ? "primary" : "secondary"}
+                            style={{ backgroundColor: "var(--textPrimary)" }}
+                            // variant={quantity > 0 ? "primary" : "secondary"}
                             type={quantity > 0 ? "highlight" : "neutral"}
                             fullWidth
                             onClick={addToCart}
@@ -215,9 +213,9 @@ export const RenderProductPicker: FC<ProductPickerProps> = ({
                           </Button>
                         ) : (
                           <Button
-                            style={{backgroundColor: primaryColor}}
+                            style={{ backgroundColor: "var(--textPrimary)" }} 
                             disabled={!quantity}
-                            variant="primary"
+                            // variant="primary"
                             type="highlight"
                             fullWidth
                             onClick={addToCart}

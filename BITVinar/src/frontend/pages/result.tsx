@@ -187,7 +187,7 @@ const ResultContent: FC = () => {
   if (paymentResult) {
     return (
       <Page className="flex flex-col">
-        <Header title="Kết quả thanh toán" className="bg-[#009e91] text-white"/>
+        <Header title="Kết quả thanh toán" className="bg-textPrimary text-white"/>
         {(function (render: (result: RenderResultProps) => ReactNode) {
           if ("resultCode" in paymentResult) {
             if (paymentResult?.resultCode === 1) {
@@ -266,8 +266,8 @@ const ResultContent: FC = () => {
 
               <Button
                 style={{
+                  backgroundColor: "var(--textPrimary)",
                   color: "#fff",
-                  backgroundColor: "#288F4E",
                   marginTop: 20,
                   marginBottom: 20,
                 }}

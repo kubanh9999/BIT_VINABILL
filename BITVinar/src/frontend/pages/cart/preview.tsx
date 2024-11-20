@@ -62,7 +62,7 @@ export const CartPreview: FC = () => {
         style={{
           backgroundColor: !quantity || !selectAddress || !userCurrent?.phone_number
             ? '#cccccc' // Màu khi nút bị khóa
-            : '#009e91', // Màu khi nút hoạt động
+            : "var(--textPrimary)", // Màu khi nút hoạt động
           color: 'white', // Màu chữ
           cursor: !quantity || !selectAddress || !userCurrent?.phone_number
             ? 'not-allowed' // Con trỏ khi nút bị khóa

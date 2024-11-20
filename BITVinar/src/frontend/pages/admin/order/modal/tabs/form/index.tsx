@@ -29,7 +29,7 @@ export const ManageFormTab = () => {
         <button
           type="button"
           onClick={() => updateOrderStatus(selectedOrder.id, "SUCCESS")}
-          className="btn btn-neutral"
+          className="btn btn-neutral bg-textPrimary"
         >
           Xác nhận
         </button>

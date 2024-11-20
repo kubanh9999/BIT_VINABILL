@@ -69,7 +69,7 @@ const CategoryProducts: FC<{ categoryId: string }> = ({ categoryId }) => {
 const CategoryPage: FC = () => {
   return (
     <Page className="flex flex-col">
-      <Header title="Danh mục" />
+      <Header title="Danh mục" className="bg-textPrimary"/>
       <CategoryPicker />
     </Page>
   );

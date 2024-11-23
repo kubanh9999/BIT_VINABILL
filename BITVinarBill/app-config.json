@@ -1,0 +1,32 @@
+{
+  "app": {
+    "title": "VinarBill",
+    "headerColor": "",
+    "textColor": "black",
+    "statusBarColor": "#ffffff",
+    "leftButton": "none",
+    "statusBar": "transparent",
+    "selfControlLoading": false,
+    "hideAndroidBottomNavigationBar": false,
+    "hideIOSSafeAreaBottom": true,
+    "actionBarHidden": true
+  },
+  "debug": false,
+  "listCSS": [],
+  "listSyncJS": [],
+  "listAsyncJS": [],
+  "pages": [
+    "/user",
+    "/form",
+    "/dynamic-route",
+    "/about",
+    "/404"
+  ],
+  "template": {
+    "primaryColor": "#FF0000",
+    "greenColor": "#009e91",
+    "prefixCurrencySymbol": false,
+    "currencySymbol": "đ",
+    "headerLogo": ""
+  }
+}
